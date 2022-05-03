@@ -11,15 +11,15 @@ sh install.sh
 ```
 **Third-party softwares**
 
-[WindowMasker](https://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/lxr/source/src/app/winmasker/README)
-[BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
-[primer3](https://github.com/primer3-org/primer3)
+* [WindowMasker](https://www.ncbi.nlm.nih.gov/IEB/ToolBox/CPP_DOC/lxr/source/src/app/winmasker/README)
+* [BLAST+](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastDocs&DOC_TYPE=Download)
+* [primer3](https://github.com/primer3-org/primer3)
 
 # User guide
 The workflow of GetPrimers was well wrapped. Qualified gene targeting primers can be obtained by just running one-line command. The web interface provided a better visualization of options and results.
 
-[GetPrimers web application manual](https://github.com/codeatcg/GetPrimers/wiki/GetPrimers-web-application-manual)
-[GetPrimers command line manual](https://github.com/codeatcg/GetPrimers/wiki/GetPrimers-command-line-manual)
+* [GetPrimers web application manual](https://github.com/codeatcg/GetPrimers/wiki/GetPrimers-web-application-manual) 
+* [GetPrimers command line manual](https://github.com/codeatcg/GetPrimers/wiki/GetPrimers-command-line-manual) 
 
 # Licence
 MIT
