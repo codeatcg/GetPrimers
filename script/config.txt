@@ -1,0 +1,110 @@
+
+#******************************
+# Path of dependency
+# Customer can define the Paths of dependency
+#******************************
+
+# absolute path of setting file (contain most of the parameters to design primers by primer3)
+# e.g.
+# primerSettings=/public/software/primer3/settings_files/primer3web_v4_0_0_modify_settings.txt
+primerSettings=*
+
+# absolute path of blastn executable program
+blastn=*
+
+# absolute path of  makeblastdb executable program
+makeblastdb=*
+
+# absolute path of  primer3 executable program
+primer=*
+
+# absolute path of  ntthal executable program （part of primer3 package）
+ntthal=*
+
+# absolute path of  windowmasker executable program
+windowmasker=*
+
+
+#******************************
+# Primer size
+#******************************
+
+# minimal primer size
+PrimerMin=18
+
+# maximal primer size
+PrimerMax=30
+
+#******************************
+# Primer location
+#******************************
+
+# G1 is within 200 ~ 600 bp upstream of start or stop codon based on primer type (knockout, ctag or ntag; see schematic plot in manual) 
+upGeneFar=600
+upGeneNear=200
+
+# Size of segment of P1 which is homologous to yeast genome
+upMixGenomeSize=45
+
+# Size of segment of P1 which is homologous to plasmid
+upMixPlasmidSize=20
+
+# G2 is within 200 ~ 600 bp downstream of start or stop codon based on primer type (knockout, ctag or ntag; see schematic plot in manual) 
+downGeneFar=600
+downGeneNear=200
+
+# Size of segment of P2 which is homologous to yeast genome
+downMixGenomeSize=45
+
+# Size of segment of P2 which is homologous to plasmid
+downMixPlasmidSize=20
+
+#******************************
+# specific
+#******************************
+
+# primer filter, similar to web app of blast primer
+# Primers with more than 6 (mismatchMore) mismatches with non-targeted region will be thought specifc.
+mismatchMore=6
+
+# For primers with less than 6 mismatches with non-targeted region 
+# only if they have at least 2 (mismatchAtLeast) mismatches with non-targeted region and at least 2 (endMismatch) mismatches are within 5 (endRegion) bp region of 3' end
+# they will be thought specifc.
+mismatchAtLeast=2
+endRegion=5
+endMismatch=2
+
+#******************************
+# Product size
+#******************************
+# minimal PCR product size required
+productMinLen=100
+# maximal PCR product size required
+productMaxLen=1500
+
+#******************************
+# dimer
+#******************************
+# The minimal melt temperature of primer pair to form a dimer is 10 (dGminMinus) degrees lower than the minimal allowable melt temperature of primers (PRIMER_MIN_TM in primer3web_v4_0_0_modify_settings.txt).
+dGminMinus=10
+
+# If there are more than 6 (dEndMatch) matches between 5' primer and 3' primer within 10 (dEndRegion) bp of 3' end
+# the prime pair will be thought to form dimer.
+# The parameters dEndRegion and  dEndMatch work only when '--thermo' option is not used.
+dEndRegion=10
+dEndMatch=6
+
+#******************************
+# Primer verification
+#******************************
+# V1 is within 601 ~ 800 bp upstream of start or stop codon based on primer type (knockout, ctag or ntag; see schematic plot in manual).
+# The value of  'vUpGeneNear' should greater than 'upGeneFar'.
+vUpGeneFar=800
+vUpGeneNear=601
+
+# V2 is within 601 ~ 800 bp downstream of start or stop codon based on primer type (knockout, ctag or ntag; see schematic plot in manual).
+# The value of  'vDownGeneNear' should greater than 'downGeneFar'.
+vDownGeneFar=800
+vDownGeneNear=601
+
+
