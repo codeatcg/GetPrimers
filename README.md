@@ -6,7 +6,7 @@ GetPrimers was originally developed to design PCR based gene targeting primers f
 # Installation
 Linux 64-bit operation system, GCC, g++ compiler, gzip and perl (>=5.8) environment are pre-required. Run the following commands to install GetPrimers and third-party softwares,
 ```
-git clone https://github.com/codeatcg/GetPrimers
+git clone https://github.com/codeatcg/GetPrimers.git
 sh install.sh
 ```
 **Third-party softwares**
