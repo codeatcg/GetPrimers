@@ -10,7 +10,7 @@ make
 make test
 
 cd $prefix/third_party
-wget -c https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/LATEST/ncbi-blast-2.11.0+-x64-linux.tar.gz
+wget -c https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz
 tar -zxf ncbi-blast-2.11.0+-x64-linux.tar.gz
 
 #cd $prefix/third_party
