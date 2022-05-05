@@ -4,10 +4,11 @@ mkdir -p $prefix/third_party
 mkdir -p $prefix/bin
 
 cd $prefix/third_party
-git clone https://github.com/primer3-org/primer3.git primer3
-cd $prefix/third_party/primer3/src
+wget -c https://github.com/primer3-org/primer3/archive/refs/tags/v2.6.1.tar.gz
+tar -zxf v2.6.1.tar.gz
+cd $prefix/third_party/primer3-2.6.1/src
 make
-make test
+#make test
 
 cd $prefix/third_party
 wget -c https://ftp.ncbi.nlm.nih.gov/blast/executables/blast+/2.11.0/ncbi-blast-2.11.0+-x64-linux.tar.gz
