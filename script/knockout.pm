@@ -1758,7 +1758,7 @@ sub vpStrandTrans{
                                 $num = 0;
                                 foreach my $k(@upSort){
                                         $num++;
-                                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                                 }
                         }
                         @upout = ();
@@ -1800,7 +1800,7 @@ sub vpStrandTrans{
                 $num = 0;
                 foreach my $k(@upSort){
                         $num++;
-                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                 }
         }
         @upout = ();
@@ -1822,7 +1822,7 @@ sub vpStrandTrans{
                                 $num = 0;
                                 foreach my $k(@downSort){
                                         $num++;
-                                        print OUB "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                                        print OUB "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                                 }
                         }
                         @downout = ();
@@ -1870,7 +1870,7 @@ sub vpStrandTrans{
                 $num = 0;
                 foreach my $k(@downSort){
                         $num++;
-                        print OUB "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                        print OUB "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                 }
         }
         @downout = ();

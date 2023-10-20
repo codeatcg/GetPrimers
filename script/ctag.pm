@@ -1754,7 +1754,7 @@ sub c_vpStrandTrans{
                                 $num = 0;
                                 foreach my $k(@upSort){
                                         $num++;
-                                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                                 }
                         }
                         @upout = ();
@@ -1795,7 +1795,7 @@ sub c_vpStrandTrans{
                 $num = 0;
                 foreach my $k(@upSort){
                         $num++;
-                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\t$k->[3]\n";
+                        print OUA "$k->[0]\t$num\t$k->[1]\t$k->[2]\n";
                 }
         }
         @upout = ();

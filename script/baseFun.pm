@@ -960,8 +960,8 @@ sub tpTrans{
                                 }else{
                                         $g1_g2_dimer = &dimer($g1_seq,$g2_seq,$dERegion,$dEMatch);
                                 }
-                                #my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a";
-                                my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd";
+                                my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a";
+                                #my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd";
                                 my $part2 = "$g1_seq\t$left_r\t$right_f\t$g2_seq\t$fplasmid\t$rplasmid\t$g1_loc\t$g3_loc\t$g4_loc\t$g2_loc\t$g1_tm\t$g3_tm\t$g4_tm\t$g2_tm\t$p1_tm\t$p2_tm\t$left_d_len\t$right_d_len\t$g1_g2_dimer\t$g1_g3_penalty\t$g4_g2_penalty";
                                 
                                 my $warn = "";
@@ -1116,10 +1116,10 @@ sub tpStrandTrans{
         chomp($f_head);
         my $force = 0;
         if($f_head =~ /Warning$/){
-                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Expect_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_penalty\tTier\tPrimer_Warning\n";
+                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Expect_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_penalty\tTier\tPrimer_Warning\n";
                 $force = 1;
         }else{
-                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Expect_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_penalty\tTier\n";
+                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Expect_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_penalty\tTier\n";
         }
         <FN>;
         my $pre_up = "";
@@ -1295,7 +1295,7 @@ sub tpStrandTrans{
                         }
                 }
         }
-        
+        close OUT;
 }
 
 sub tpGeneTrans{
@@ -1613,8 +1613,8 @@ sub tpBlastMerge{
                                 }else{
                                         $g1_g2_dimer = &dimer($g1_seq,$g2_seq,$dERegion,$dEMatch);
                                 }
-                                #my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a";
-                                my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd";
+                                my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a";
+                                #my $part1 = "$outName\t$strand\t$chr\t$gStart\t$gEnd";
                                 my $part2 = "$g1_seq\t$left_r\t$right_f\t$g2_seq\t$fplasmid\t$rplasmid\t$g1_loc\t$g3_loc\t$g4_loc\t$g2_loc\t$g1_tm\t$g3_tm\t$g4_tm\t$g2_tm\t$p1_tm\t$p2_tm\t$up_wstat\t$upPcr->[$i]\t$left_d_len\t$down_wstat\t$downPcr->[$j]\t$right_d_len\t$g1_g2_dimer\t$g1_g3_penalty\t$g4_g2_penalty";
                                 my $warn = "";
                                 if($force){
@@ -1742,10 +1742,10 @@ sub tpMergeInfo{
         chomp($f_head);
         my $force = 0;
         if($f_head =~ /Warning$/){
-                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Products_Counts\tG1_G3_Blast_Len\tG1_G3_Expect_Len\tG4_G2_Products_Counts\tG4_G2_Blast_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_Penalty\tTier\tPrimer_Warning\n";
+                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Products_Counts\tG1_G3_Blast_Len\tG1_G3_Expect_Len\tG4_G2_Products_Counts\tG4_G2_Blast_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_Penalty\tTier\tPrimer_Warning\n";
                 $force = 1;
         }else{
-                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Products_Counts\tG1_G3_Blast_Len\tG1_G3_Expect_Len\tG4_G2_Products_Counts\tG4_G2_Blast_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_Penalty\tTier\n";
+                print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tPrimer_ID\tG1\tG3\tG4\tG2\tP1\tP2\tG1_Loc\tG3_Loc\tG4_Loc\tG2_Loc\tG1_Tm\tG3_Tm\tG4_Tm\tG2_Tm\tP1_Tm\tP2_Tm\tG1_G3_Products_Counts\tG1_G3_Blast_Len\tG1_G3_Expect_Len\tG4_G2_Products_Counts\tG4_G2_Blast_Len\tG4_G2_Expect_Len\tG1_G2_Dimer\tG1_G3_Penalty\tG4_G2_Penalty\tTier\n";
         }
         <FN>;
         
@@ -2451,14 +2451,16 @@ sub s_tpStrandTrans{
         (open GN,"$upMix") || die "$!\n";
         (open HN,"$downMix") || die "$!\n";
         (open OUT,">$t_dir/primer_result/target.primer.unblast.txt") || die "$!\n";
-        print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tP1\tP2\tP1_Tm\tP2_Tm\n";
-        my ($geneName);
+        print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tP1\tP2\tP1_Tm\tP2_Tm\n";
+        my ($geneName,$tag);
         my ($up_mix_fir,$up_mix_sec,$down_mix_fir,$down_mix_sec);
         my ($left_r,$right_f);
         my ($fplasmid,$rplasmid);
         my $infoName="";
         my ($chr,$gStart,$gEnd,$v_up_a,$strand);
         my ($tm_p1,$tm_p2);
+        
+        my $flag = 1;
         while($up_mix_fir=<GN>){
                 $up_mix_sec=<GN>;
                 $down_mix_fir=<HN>;
@@ -2469,40 +2471,44 @@ sub s_tpStrandTrans{
                 chomp($down_mix_sec);
                 if($up_mix_fir=~/>(.+)_lmix/){
                         $geneName=$1;
+                        ($tag=$geneName)=~s/\|/\t/g;
                 }
                 #
+                $flag = 1;
                 while($geneName ne $infoName){
                         if(scalar(@{$info})>0){
                                 my $geneTag=shift(@{$info});
                                 my @geneInfo=split /\,/,$geneTag;
                                 ($infoName,$chr,$gStart,$gEnd,$v_up_a,$strand)=@geneInfo[0,1,6,7,8,13];
                         }else{
+                                $flag = 0;
                                 last;
                         }
                 }
-        }
-        
-        if($strand eq "+"){
-                $left_r="$up_rmix" . "$up_mix_sec";
-                $right_f="$down_fmix" . "$down_mix_sec";
-                
-                $fplasmid=reverse($left_r);
-                $fplasmid=~tr/ATCGatcg/TAGCtagc/;
-                $rplasmid=reverse($right_f);
-                $rplasmid=~tr/ATCGatcg/TAGCtagc/;
-                
-                #$v_up_a\t
-                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
-        }else{
-                $left_r="$up_rmix" . "$down_mix_sec";
-                $right_f="$down_fmix" . "$up_mix_sec";
-                
-                $fplasmid=reverse($left_r);
-                $fplasmid=~tr/ATCGatcg/TAGCtagc/;
-                $rplasmid=reverse($right_f);
-                $rplasmid=~tr/ATCGatcg/TAGCtagc/;
-                
-                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
+                if($flag){
+                    if($strand eq "+"){
+                            $left_r="$up_rmix" . "$up_mix_sec";
+                            $right_f="$down_fmix" . "$down_mix_sec";
+                            
+                            $fplasmid=reverse($left_r);
+                            $fplasmid=~tr/ATCGatcg/TAGCtagc/;
+                            $rplasmid=reverse($right_f);
+                            $rplasmid=~tr/ATCGatcg/TAGCtagc/;
+                            
+                            #$v_up_a\t
+                            print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
+                    }else{
+                            $left_r="$up_rmix" . "$down_mix_sec";
+                            $right_f="$down_fmix" . "$up_mix_sec";
+                            
+                            $fplasmid=reverse($left_r);
+                            $fplasmid=~tr/ATCGatcg/TAGCtagc/;
+                            $rplasmid=reverse($right_f);
+                            $rplasmid=~tr/ATCGatcg/TAGCtagc/;
+                            
+                            print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
+                    }
+                }
         }
         close GN;
         close HN;
@@ -2568,7 +2574,7 @@ sub s_tpMergeInfo{
         (open BN,"$rFa") || die "file contain P1 (reverse complement) sequence open failed. $!\n";
         (open DN,"$fFa") || die "file contain P2 (reverse complement) sequence open failed. $!\n";
         (open OUT,">$outFile") || die "$!\n";
-        print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tP1\tP2\tP1_Tm\tP2_Tm\tP1_Blast_Match\tP2_Blast_Match\n";
+        print OUT "#ID\tGene_Name\tDbxref_ID\tStrand\tChr\tCDS_Start\tCDS_End\tSeq_Start\tP1\tP2\tP1_Tm\tP2_Tm\tP1_Blast_Match\tP2_Blast_Match\n";
         
         my ($fhit,$rhit)=(0,0);
         my $indicate=0;
@@ -2609,9 +2615,9 @@ sub s_tpMergeInfo{
                                                         #$tm_p2=&tmValue($rplasmid,$pCon,$salt,$method);
                                                         if($strand eq "+"){
                                                                 #$v_up_a\t
-                                                                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$rhit\t$fhit\n";
+                                                                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$rhit\t$fhit\n";
                                                         }else{
-                                                                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$fhit\t$rhit\n";
+                                                                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$fhit\t$rhit\n";
                                                         }
                                                         last;
                                                 }
@@ -2739,9 +2745,9 @@ sub s_tpMergeInfo{
         #$tm_p2=&tmValue($rplasmid,$pCon,$salt,$method);
         if($strand eq "+"){
                 #$v_up_a
-                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$rhit\t$fhit\n";
+                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$rhit\t$fhit\n";
         }else{
-                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$fhit\t$rhit\n";
+                print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\t$fhit\t$rhit\n";
         }                               
         close IN;
         close AN;
