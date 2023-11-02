@@ -2496,7 +2496,7 @@ sub s_tpStrandTrans{
                             $rplasmid=~tr/ATCGatcg/TAGCtagc/;
                             
                             #$v_up_a\t
-                            print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
+                            print OUT "$tag\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
                     }else{
                             $left_r="$up_rmix" . "$down_mix_sec";
                             $right_f="$down_fmix" . "$up_mix_sec";
@@ -2506,7 +2506,7 @@ sub s_tpStrandTrans{
                             $rplasmid=reverse($right_f);
                             $rplasmid=~tr/ATCGatcg/TAGCtagc/;
                             
-                            print OUT "$geneName\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
+                            print OUT "$tag\t$strand\t$chr\t$gStart\t$gEnd\t$v_up_a\t$fplasmid\t$rplasmid\t$p1_tm\t$p2_tm\n";
                     }
                 }
         }
