@@ -169,11 +169,13 @@ sub c_geneNameInterval{
         my @cds;
         my $indicate=0;
         my $c_mRNA=0;
+        my $p_cds_p="";
 		while(<IN>){
 		        chomp;
 				next if(/^#/);
 				my @line=split;
-				if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+				#if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                if($line[2] =~ /.*gene$/){
                         if($indicate==1){
                                 if(exists ${$refLen}{$chr}){
                                         $c_end=$refLen->{$chr};
@@ -272,6 +274,18 @@ sub c_geneNameInterval{
                         if($c_mRNA>1){
                                 next;
                         }
+                        #
+                        if($line[8] =~ /Parent=(.+?)(;|$)/){
+                            my $cds_p=$1;
+                            if($indicate){
+                                if($cds_p ne $p_cds_p){
+                                    next;
+                                }
+                            }else{
+                                $p_cds_p=$cds_p;
+                            }
+                        }
+                        #
                         push(@cds,[$line[3],$line[4]]);
                         $indicate=1;
                 }				
@@ -361,11 +375,13 @@ sub c_nameListInterval{
         my @cds;
         my $indicate=0;
         my $c_mRNA=0;
+        my $p_cds_p="";
 		while(<IN>){
 		        chomp;
 				next if(/^#/);
 				my @line=split;
-				if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+				#if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                if($line[2] =~ /.*gene$/){
                         if($indicate==1){
                                 if(exists ${$refLen}{$chr}){
                                         $c_end=$refLen->{$chr};
@@ -468,6 +484,18 @@ sub c_nameListInterval{
                         if($c_mRNA>1){
                                 next;
                         }
+                        #
+                        if($line[8] =~ /Parent=(.+?)(;|$)/){
+                            my $cds_p=$1;
+                            if($indicate){
+                                if($cds_p ne $p_cds_p){
+                                    next;
+                                }
+                            }else{
+                                $p_cds_p=$cds_p;
+                            }
+                        }
+                        #
                         push(@cds,[$line[3],$line[4]]);
                         $indicate=1;
                 }	
@@ -552,11 +580,13 @@ sub c_coordInterval{
         my @cds;
         my $indicate=0;
         my $c_mRNA=0;
+        my $p_cds_p="";
 		while(<IN>){
 		        chomp;
 				next if(/^#/);
 				my @line=split;
-				if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+				#if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                if($line[2] =~ /.*gene$/){
                         if($indicate==1){
                                 if(exists ${$refLen}{$chr}){
                                         $c_end=$refLen->{$chr};
@@ -659,6 +689,18 @@ sub c_coordInterval{
                         if($c_mRNA>1){
                                 next;
                         }
+                        #
+                        if($line[8] =~ /Parent=(.+?)(;|$)/){
+                            my $cds_p=$1;
+                            if($indicate){
+                                if($cds_p ne $p_cds_p){
+                                    next;
+                                }
+                            }else{
+                                $p_cds_p=$cds_p;
+                            }
+                        }
+                        #
                         push(@cds,[$line[3],$line[4]]);
                         $indicate=1;
                 }				
@@ -755,11 +797,13 @@ sub c_coordListInterval{
         my $dbxref;
         my $indicate=0;
         my $c_mRNA=0;
+        my $p_cds_p="";
 		while(<IN>){
 		        chomp;
 				next if(/^#/);
 				my @line=split;
-				if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+				#if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                if($line[2] =~ /.*gene$/){
                         if($indicate==1){
                                 if(exists ${$refLen}{$chr}){
                                         $c_end=$refLen->{$chr};
@@ -876,6 +920,18 @@ sub c_coordListInterval{
                         if($c_mRNA>1){
                                 next;
                         }
+                        #
+                        if($line[8] =~ /Parent=(.+?)(;|$)/){
+                            my $cds_p=$1;
+                            if($indicate){
+                                if($cds_p ne $p_cds_p){
+                                    next;
+                                }
+                            }else{
+                                $p_cds_p=$cds_p;
+                            }
+                        }
+                        #
                         push(@cds,[$line[3],$line[4]]);
                         $indicate=1;
                 }				
@@ -967,12 +1023,14 @@ sub c_allInterval{
         my $dbxref;
         my $indicate=0;
         my $c_mRNA=0;
+        my $p_cds_p="";
 		while(<IN>){
 		        chomp;
 				next if(/^#/);
 				my @line=split;
 				#if($line[2] eq "gene" || $line[2] eq "ncRNA_gene" || $line[2] eq "pseudogene"){
-                if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                #if($line[2] eq "gene" || $line[2] eq "pseudogene"){
+                if($line[2] =~ /.*gene$/){
                         if($indicate==1){
                                 if(exists $r_hash{$a_geneName}){
                                         print "Warning: gene name duplicate in the GFF file.\n";
@@ -1077,6 +1135,18 @@ sub c_allInterval{
                         if($c_mRNA>1){
                                 next;
                         }
+                        #
+                        if($line[8] =~ /Parent=(.+?)(;|$)/){
+                            my $cds_p=$1;
+                            if($indicate){
+                                if($cds_p ne $p_cds_p){
+                                    next;
+                                }
+                            }else{
+                                $p_cds_p=$cds_p;
+                            }
+                        }
+                        #
                         push(@cds,[$line[3],$line[4]]);
                         $indicate=1;
                 }
