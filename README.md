@@ -12,7 +12,7 @@ GetPrimers was originally developed to design PCR based gene targeting primers f
 In theory and practice Getprimers can be used for other eukaryotes besides yeast. For more information please refer to https://www.evomicslab.org/app/getprimers/info/.
 
 # Citation
-Zepu Miao^, Haiting Wang^, Xinyu Tu^, Zhengshen Huang, Shujing Huang, Xinxin Zhang, Fan Wang, Zhishen Huang, Huihui Li, Yue Jiao, Song Gao, Zhipeng Zhou, Chun-Min Shan*, Jing Li*, Jia-Xing Yue*. (2023) GetPrimers: a generalized PCR-based genetic targeting primer designer enabling easy and standardized targeted gene modification across multiple systems. Yeast, doi: https://doi.org/10.1002/yea.3916.
+Zepu Miao^, Haiting Wang^, Xinyu Tu^, Zhengshen Huang, Shujing Huang, Xinxin Zhang, Fan Wang, Zhishen Huang, Huihui Li, Yue Jiao, Song Gao, Zhipeng Zhou, Chun-Min Shan*, Jing Li*, Jia-Xing Yue*. (2024) GetPrimers: a generalized PCR-based genetic targeting primer designer enabling easy and standardized targeted gene modification across multiple systems. Yeast, 41(1-2):19-34.(doi: https://doi.org/10.1002/yea.3916) [<a href="https://onlinelibrary.wiley.com/doi/full/10.1002/yea.3916">LINK</a>]
 
 # Installation
 Linux 64-bit operation system, GCC, g++ compiler, gzip and perl (>=5.8) environment are pre-required. Run the following commands to install GetPrimers and third-party softwares,
